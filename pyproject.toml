@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "if_bench"                 # **确认 PyPI 上未被占用**
+version = "0.1.0"
+description = "Intrinsic Feature Benchmarks for Large Language Models"
+authors = [{name = "Jianxiang Zang"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+
+# 运行时依赖，根据实际精简
+dependencies = [
+    "torch>=2.1",
+    "datasets>=2.19",
+    "transformers>=4.40",
+    "accelerate>=0.29",
+    "torchaudio>=2.1 ; extra == 'audio'",   # 可加 extras
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = ["black", "ruff", "pytest", "build", "twine"]
+
+[project.urls]
+"Homepage" = "https://github.com/yourname/if-bench"
+"Bug Tracker" = "https://github.com/yourname/if-bench/issues"
+
+[project.scripts]                 # 安装后创建 console-script
+if-bench = "if_bench.__main__:main"
+
+[tool.setuptools]
+packages = ["if_bench"]            # 排除 datasets/ 等其它目录
+include-package-data = true        # 如需打包非 .py 资源，可配 MANIFEST.in

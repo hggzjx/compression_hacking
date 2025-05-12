@@ -1,0 +1,15 @@
+torch>=2.1
+datasets>=2.19
+transformers>=4.40
+accelerate>=0.29
+tqdm
+
+[:extra == "audio"]
+torchaudio>=2.1
+
+[dev]
+black
+ruff
+pytest
+build
+twine
