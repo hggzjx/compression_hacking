@@ -1,0 +1,4 @@
+torch
+torchvision
+datasets
+transformers>=4.0

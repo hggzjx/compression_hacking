@@ -14,6 +14,12 @@ torch.cuda.empty_cache()
 torch.cuda.reset_peak_memory_stats()
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
+from pathlib import Path
+
+PACKAGE_DIR = Path(__file__).resolve().parent
+DATA_PATH = PACKAGE_DIR / "dataset" / "IFEval.json"
+
+
 class IFEvaluator:
     def __init__(
         self,
@@ -78,7 +84,7 @@ class IFEvaluator:
         #             context = json_line.get('context', '')  
         #             self.context_lst.append(context)
         # elif "IFEval" in self.dataset_name:
-        with open('datasets/IFEval.json', 'r') as file:
+        with open(DATA_PATH, "r", encoding="utf-8") as file:
             data = json.load(file)
         for item in data:
             self.context_lst.append(item['context'])

@@ -3,34 +3,36 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "if_bench"                 # **确认 PyPI 上未被占用**
-version = "0.1.0"
-description = "Intrinsic Feature Benchmarks for Large Language Models"
-authors = [{name = "Jianxiang Zang"}]
-readme = "README.md"
-license = {file = "LICENSE"}
-requires-python = ">=3.8"
-
-# 运行时依赖，根据实际精简
-dependencies = [
-    "torch>=2.1",
-    "datasets>=2.19",
-    "transformers>=4.40",
-    "accelerate>=0.29",
-    "torchaudio>=2.1 ; extra == 'audio'",   # 可加 extras
-    "tqdm",
+name = "evaluator"  # 包名，pip install 时用这个名称
+version = "0.1.0"  
+authors = [
+    { name = "Jianxiang Zang", email = "zjxhgg@gmail.com" }, # 替换成你的信息
 ]
 
-[project.optional-dependencies]
-dev = ["black", "ruff", "pytest", "build", "twine"]
+description = "Offical codes for the paper "Compression Hacking: A Supplementary Perspective on Informatics Metric of Language Models from Geometric Distortion"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License", 
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 
-[project.urls]
-"Homepage" = "https://github.com/yourname/if-bench"
-"Bug Tracker" = "https://github.com/yourname/if-bench/issues"
+dependencies = [
+    "torch",
+    "torchvision",
+    "datasets",
+    "transformers>=4.0"]
 
-[project.scripts]                 # 安装后创建 console-script
-if-bench = "if_bench.__main__:main"
 
 [tool.setuptools]
-packages = ["if_bench"]            # 排除 datasets/ 等其它目录
-include-package-data = true        # 如需打包非 .py 资源，可配 MANIFEST.in
+include-package-data = true          
+
+[tool.setuptools.package-data]
+"evaluator" = ["dataset/*.json"]    
+
+[project.urls] 
+"Homepage" = "https://github.com/hggzjx/compression_hacking" 
+"Bug Tracker" = "https://github.com/hggzjx/compression_hacking/issues"

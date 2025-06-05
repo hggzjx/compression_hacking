@@ -1,2 +1,0 @@
-[console_scripts]
-if-bench = if_bench.__main__:main
