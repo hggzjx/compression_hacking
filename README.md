@@ -23,15 +23,3 @@ evaluator = IFEvaluator(model_path="facebook/opt-1.3b",sample_size=80,batch_size
 results = evaluator.evaluate(metric="semantic_cv")
 print(results)
 ```
-
-## Citation
-
-If you use this package in your research, please cite our paper:
-
-```bibtex
-@article{zang2025compression,
-  title={Compression Hacking: A Supplementary Perspective on Informatics Metric of Language Models from Geometric Distortion},
-  author={Zang, Jianxiang and Ning, Meiling and Wei, Yongda and Dou, Shihan and Zhang, Jiazheng and Mo, Nijia and Li, Binhong and Gui, Tao and Zhang, Qi and Huang, Xuanjing},
-  journal={arXiv preprint arXiv:2505.17793},
-  year={2025}
-}
