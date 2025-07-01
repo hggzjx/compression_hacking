@@ -20,8 +20,10 @@
 Recently, the concept of "compression as intelligence" has provided a novel informatics metric perspective for language models (LMs), emphasizing that highly structured representations signify the intelligence level of LMs. However, from a geometric standpoint, the representation space of highly compressed LMs tends to degenerate into a highly anisotropic state, which hinders the LM's ability to comprehend instructions and directly impacts its performance. We found this compression-anisotropy synchronicity is essentially the **_Compression Hacking_** in LM representations, where **noise-dominated directions tend to create the illusion of high compression rates by sacrificing spatial uniformity**.
 Based on this, we propose three refined compression metrics by incorporating geometric distortion analysis and integrate them into a self-evaluation pipeline. The refined metrics exhibit strong alignment with the LM's comprehensive capabilities, achieving Spearman correlation coefficients above 0.9, significantly outperforming both the original compression and other internal structure-based metrics. This confirms that compression hacking substantially enhances the informatics interpretation of LMs by incorporating geometric distortion of representations.
 
+We packaged the evaluation pipeline into an **easily callable tool** as shown below, enabling users to conveniently evaluate models using our three proposed metrics.
 
-## Usage
+
+## 😍 Usage
 
 First, you need to install the package. You can install it by running the following command:
 
@@ -150,6 +152,9 @@ Distributed under the Apache-2.0 License. See LICENSE for more information.
 
 
 ## 📖Citation
+
+if you find this work helpful, please cite it as:
+
 ```
 @article{zang2025compression,
   title={Compression Hacking: A Supplementary Perspective on Informatics Metric of Language Models from Geometric Distortion},
