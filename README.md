@@ -32,7 +32,7 @@ cd compression_hacking
 pip install -e . # install in editable mode
 ```
 
-Then, you can use the package to evaluate the language models. For example, you can use the following code to evaluate the language models:
+Then, you can directly use the following evaluation script (Python) for assessment, or simply run the demo.py file.
 
 ```python
 import os
